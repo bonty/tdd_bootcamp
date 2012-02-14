@@ -1,42 +1,18 @@
-#include <iostream>
+#include <cppunit/config/SourcePrefix.h>
+#include "LRUCacheTest.hpp"
 
-#include <cppunit/TestRunner.h>
-#include <cppunit/TestResult.h>
-#include <cppunit/TestResultCollector.h>
-#include <cppunit/extensions/HelperMacros.h>
-#include <cppunit/BriefTestProgressListener.h>
-#include <cppunit/extensions/TestFactoryRegistry.h>
-#include <cppunit/ui/text/TestRunner.h>
+CPPUNIT_TEST_SUITE_REGISTRATION( LRUCacheTest );
 
-#include "LRUCache.hpp"
-
-class LRUCacheTest : public CPPUNIT_NS::TestCase
+void LRUCacheTest::example()
 {
-  CPPUNIT_TEST_SUITE(LRUCache);
-  // insert test method here
-  CPPUNIT_TEST_SUITE_END();
-
-private:
-  LRUCache *plru;
-  
-public:
-  LRUCacheTest() {}
-
-  void setUp() {
-    *plru = new LRUCache();
-  }
-
-  void tearDown() {
-    delete plru;
-  }
-
-  // insert test method here
-};
-
-int main(void) {
-  CppUnit::TestSuite *suit = LRUCacheTest::suite();
-  CppUnit::TextUi::TestRunner runner;
-  runner.addTest(suite);
-  bool retcode = runner.run();
-  reeturn !retcode;
+  CPPUNIT_ASSERT_DOUBLES_EQUAL( 1.0, 1.1, 0.05 );
+  CPPUNIT_ASSERT( 1 == 0 );
+  CPPUNIT_ASSERT( 1 == 1 );
 }
+
+void LRUCacheTest::setUp()
+{
+  m_value1 = 2.0;
+  m_value2 = 3.0;
+}
+
