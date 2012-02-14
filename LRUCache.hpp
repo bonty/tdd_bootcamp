@@ -1,3 +1,6 @@
+#include <string>
+#include <map>
+#include <vector>
 class LRUCache
 {
 private:
@@ -6,9 +9,9 @@ private:
   std::map<std::string, std::string> m_map;
   
 public:
-  LRUCache();
-  ~LRUCache();
+  LRUCache(){};
+  ~LRUCache(){};
 
   int put(const std::string key, const std::string value);
   std::string get(const std::string key);
-}
+};
