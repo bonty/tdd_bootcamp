@@ -9,7 +9,7 @@ private:
   std::map<std::string, std::string> m_map;
   
 public:
-  LRUCache(){};
+  LRUCache():m_max(2){};
   ~LRUCache(){};
 
   int put(const std::string key, const std::string value);

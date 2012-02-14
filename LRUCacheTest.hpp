@@ -3,6 +3,7 @@
 #define CPP_UNIT_EXAMPLETESTCASE_H
 
 #include <cppunit/extensions/HelperMacros.h>
+#include "LRUCache.hpp"
 
 /* 
  * A test case that is designed to produce
@@ -13,18 +14,17 @@
 class LRUCacheTest : public CPPUNIT_NS::TestFixture
 {
   CPPUNIT_TEST_SUITE( LRUCacheTest );
-  CPPUNIT_TEST( example );
+  CPPUNIT_TEST( test_put );
   CPPUNIT_TEST_SUITE_END();
 
 protected:
-  double m_value1;
-  double m_value2;
+  LRUCache *lru;
 
 public:
   void setUp();
 
 protected:
-  void example();
+  void test_put();
 };
 
 
